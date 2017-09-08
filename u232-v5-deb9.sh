@@ -134,8 +134,11 @@ apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb9
 wget https://www.dotdeb.org/dotdeb.gpg >>"${OUTTO}" 2>&1
 apt-key add dotdeb.gpg >>"${OUTTO}" 2>&1
 rm dotdeb.gpg
+wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add - >>"${OUTTO}" 2>&1
+rm jcameron-key.asc
 add-apt-repository "deb http://mirrors.digitalocean.com/debian stretch main" >>"${OUTTO}" 2>&1
 add-apt-repository "deb-src http://mirrors.digitalocean.com/debian stretch main" >>"${OUTTO}" 2>&1
+add-apt-repository "deb http://download.webmin.com/download/repository sarge contrib" >>"${OUTTO}" 2>&1
 
 if [[ $webserver = 'nginx' ]]; then
     STARTWEBSERVER='service nginx restart'
@@ -154,6 +157,7 @@ apt-get -y update >>"${OUTTO}" 2>&1
   echo mariadb-server-10.1 mysql-server/root_password password $mysqlroot | debconf-set-selections
   echo mariadb-server-10.1 mysql-server/root_password_again password $mysqlroot | debconf-set-selections
 apt-get -y install mariadb-server memcached unzip libssl-dev php7.0 php7.0-curl php7.0-igbinary php7.0-json php7.0-memcached php7.0-msgpack php-mbstring php7.0-gd php7.0-geoip php7.0-opcache php7.0-xml php7.0-zip php7.0-mcrypt php7.0-mysql sendmail sendmail-bin expect locate $webpackages $extras >>"${OUTTO}" 2>&1
+apt-get -y install sudo ca-certificates wget php7.0-gmp geoip-database >>"${OUTTO}" 2>&1
 if [[ $ssl == 'y' ]]; then
 	add-apt-repository "deb http://ftp.debian.org/debian stretch-backports main" >>"${OUTTO}" 2>&1
 	apt-get -y update >>"${OUTTO}" 2>&1
