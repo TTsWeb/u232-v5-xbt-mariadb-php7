@@ -1,4 +1,4 @@
-# Ocelot
+This is for Debian 8-9, there is other script maybe for other OS's but you will need to have the brain power to fix them.
 
 # u232-v5-xbt-mariadb-php7
 This is a mess of different scripts found to install U-232 V5 on Debian 8-9
@@ -14,7 +14,7 @@ Other ones are there incase people got the brain power to fix them from there sy
 
 XBT is gone from svn so you will need to find another source for it. This seems to work for NOW.
 cd /root
-wget https://github.com/whocares-openscene/u-232-xbt/raw/master/xbt.tar.gz
+wget https://github.com/TTsWeb/u232-v5-xbt-mariadb-php7/raw/master/xbt.tar.gz
 tar xfz xbt.tar.gz
 cd /root/xbt/Tracker/
 ./make.sh
