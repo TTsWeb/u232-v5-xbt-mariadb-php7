@@ -11,6 +11,8 @@ sudo apt-get -y install libboost-all-dev libboost-iostreams-dev libboost-fiber-d
 sudo apt-get -y install tcl8.5 tcl8.5-dev curl libssl-dev libncurses5-dev zip unzip openssl tcpd openbsd-inetd
 sudo apt-get -y mysqltcl tcl tcl-dev tcl8.5 tcl8.5-dev tk tk-dev tk8.5 tk8.5-dev tcl-doc tclreadline tcl8.5-doc tk-doc tk8.5-doc mesa-utils 
 sudo apt-get -y install tcllib tdom tcl-tls libsqlite3-tcl mysqltcl tcl-trf gnutls-bin libgnutls28-dev
+sudo apt-get -y install php7.0-bz2 php7.0-mbstring
+sudo apt-get -y install mariadb-client mariadb-server mariadb-client-10.1 mariadb-server-10.1 mariadb-server-core-10.1 mariadb-client-core-10.1 mysqltcl php7.0-mysql
 apt-get install webmin -y
 git clone https://github.com/cloudflare/mod_cloudflare.git && cd mod_cloudflare
 apxs -a -i -c mod_cloudflare.c
